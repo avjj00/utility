@@ -5,7 +5,7 @@ $uninstallGuid = $uninstallString | Select-String -Pattern '{[-0-9A-F]+?}' -AllM
 
 try {
 	
-	Start-Process 'msiexec.exe' -ArgumentList "/x $uninstallGuid /norestart /qn" -WindowStyle Hidden
+	Start-Process 'msiexec.exe' -ArgumentList "/x $uninstallGuid /norestart /quiet" -WindowStyle Hidden
 	
 } catch {
 					
@@ -15,4 +15,5 @@ try {
 	exit 1
 					
 }
+
 
